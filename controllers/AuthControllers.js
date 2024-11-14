@@ -72,6 +72,9 @@ class AuthController {
 
     static async login(req, res) {
         const { email, password } = req.body;
+
+console.log(req.body)
+
         const usuario = await prisma.user.findUnique({
             where: { email: email }
         });
